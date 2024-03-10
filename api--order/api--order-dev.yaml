@@ -1,0 +1,4 @@
+backend:
+  services:
+    customerUrl: http://localhost:8081/
+    productUrl: http://localhost:8082/
