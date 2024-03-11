@@ -3,3 +3,9 @@ backend:
     customerUrl: http://localhost:8081/
     productUrl: http://localhost:8082/
     orderUrl: http://localhost:8083/
+
+cache:
+  redis:
+    host: localhost
+    port: 6730
+    ttlCache: 3
