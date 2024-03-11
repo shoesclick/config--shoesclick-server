@@ -7,5 +7,5 @@ backend:
 cache:
   redis:
     host: localhost
-    port: 6730
+    port: 6379
     ttlCache: 3
