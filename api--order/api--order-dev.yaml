@@ -8,13 +8,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: ${SPRING_JPA_SHOW_SQL:true}
-    datasource:
-      password: ${SPRING_DATASOURCE_PASSWORD:password}
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      username: ${SPRING_DATASOURCE_USERNAME:root}
-      tomcat:
-        max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-      url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dborder?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+  datasource:
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    tomcat:
+      max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dborder?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
     rabbitmq:
       username: "admin"
