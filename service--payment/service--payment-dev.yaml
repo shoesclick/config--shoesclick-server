@@ -33,9 +33,10 @@ rabbitmq:
 
 backend:
   services:
-    customerUrl: http://localhost:8081/
-    productUrl: http://localhost:8082/
-    orderUrl: http://localhost:8083/
+    customerUrl: http://localhost:8081/api--customer/
+    productUrl: http://localhost:8082/api--product
+    orderUrl: http://localhost:8083/api--order/
+
   gateway:
     bankSlipUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
     pixUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
