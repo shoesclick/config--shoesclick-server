@@ -17,10 +17,10 @@ spring:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
 kafka:
-  bootstrap-servers: localhost:9082
+  bootstrap-servers: localhost:19092
   schema:
     registry:
-      url: http://localhost:9081
+      url: http://localhost:8081
   notification:
     topic: kfk-order-notification
     groupId: grp-order-notification
