@@ -15,20 +15,18 @@ spring:
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-  rabbitmq:
-    username: "admin"
-    password: "passw123"
-    port: 5672
-    host: localhost
 
-rabbitmq:
-  exchange: shoesclick_exchange
+kafka:
+  bootstrap-servers: localhost:9082
+  schema:
+    registry:
+      url: http://localhost:9081
   notification:
-    queue: mq_notification
-    routingKey: notification_routingkey
+    topic: kfk-order-notification
+    groupId: grp-order-notification
   payment:
-    queue: mq_payment
-    routingKey: payment_routingkey
+    topic: kfk-order-payment
+    groupId: grp-order-payment
 
 
 backend:
