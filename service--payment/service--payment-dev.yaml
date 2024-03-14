@@ -15,27 +15,25 @@ spring:
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-  rabbitmq:
-    username: "admin"
-    password: "passw123"
-    port: 5672
-    host: localhost
 
-rabbitmq:
-  exchange: shoesclick_exchange
+kafka:
+  bootstrap-servers: localhost:19092
+  schema:
+    registry:
+      url: http://localhost:8081
   notification:
-    queue: mq_notification
-    routingKey: notification_routingkey
+    topic: kfk-order-notification
+    groupId: grp-order-notification
   payment:
-    queue: mq_payment
-    routingKey: payment_routingkey
+    topic: kfk-order-payment
+    groupId: grp-order-payment
 
 
 backend:
   services:
-    customerUrl: http://localhost:8081/api--customer/
-    productUrl: http://localhost:8082/api--product
-    orderUrl: http://localhost:8083/api--order/
+    customerUrl: http://localhost:5100/api--customer/
+    productUrl: http://localhost:5200/api--product
+    orderUrl: http://localhost:5300/api--order/
 
   gateway:
     bankSlipUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
