@@ -18,9 +18,7 @@ spring:
 
 kafka:
   bootstrap-servers: localhost:19092
-  schema:
-    registry:
-      url: http://localhost:8081
+  schemaRegistry: http://localhost:8081
   notification:
     topic: kfk-order-notification
     groupId: grp-order-notification
