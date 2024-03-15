@@ -31,5 +31,5 @@ kafka:
 
 backend:
   services:
-    customerUrl: http://localhost:5100/api--customer/
-    productUrl: http://localhost:5200/api--product
+    customerUrl: http://localhost:5000/api--customer/
+    productUrl: http://localhost:5100/api--product
