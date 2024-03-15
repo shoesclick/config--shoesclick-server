@@ -28,7 +28,7 @@ spring:
     port: '587'
 
 kafka:
-  bootstrap-servers: localhost:19092
+  bootstrap-servers: localhost:9092
   schemaRegistry: http://localhost:8081
   notification:
     topic: kfk-order-notification
