@@ -16,6 +16,21 @@ spring:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dborder?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
+  rabbitmq:
+    username: "admin"
+    password: "passw123"
+    port: 5672
+    host: localhost
+
+rabbitmq:
+  exchange: shoesclick_exchange
+  notification:
+    queue: mq_notification
+    routingKey: notification_routingkey
+  payment:
+    queue: mq_payment
+    routingKey: payment_routingkey
+
 kafka:
   bootstrap-servers: localhost:9092
   schemaRegistry: http://localhost:8081
