@@ -1,3 +1,11 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:7080/auth/realms/shoesclick-site
+          jwk-set-uri: http://localhost:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
+
 backend:
   services:
     customerUrl: http://localhost:5100/api--customer/

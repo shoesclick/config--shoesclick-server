@@ -16,6 +16,13 @@ spring:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dborder?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:7080/auth/realms/shoesclick-site
+          jwk-set-uri: http://localhost:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
+
 kafka:
   bootstrap-servers: localhost:9092
   schemaRegistry: http://localhost:8081
@@ -25,9 +32,6 @@ kafka:
   payment:
     topic: kfk-order-payment
     groupId: grp-order-payment
-
-
-
 
 backend:
   services:
