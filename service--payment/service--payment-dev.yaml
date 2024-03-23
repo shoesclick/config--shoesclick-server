@@ -31,7 +31,7 @@ backend:
   services:
     customerUrl: http://localhost:5000/api--customer/
     productUrl: http://localhost:5100/api--product
-    orderUrl: http://localhost:5200/api--order/
+    orderUrl: http://localhost:5300/api--order/
 
   gateway:
     bankSlipUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
