@@ -46,6 +46,7 @@ backend:
     productUrl: http://localhost:5100/api--product
 
 token:
+  tokenUrl: http://localhost:7080/auth/realms/shoesclick-site/protocol/openid-connect/token
   clientId: site--shoesclick
   clientSecret: WrgQYaKuYaDDVjLT3wHis5P9kOnAfjJf
   grantType : client_credentials
