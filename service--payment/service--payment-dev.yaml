@@ -42,3 +42,8 @@ backend:
     bankSlipUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
     pixUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
     cardUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
+
+token:
+  clientId: site--shoesclick
+  clientSecret: WrgQYaKuYaDDVjLT3wHis5P9kOnAfjJf
+  grantType : client_credentials

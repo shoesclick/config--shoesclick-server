@@ -44,3 +44,9 @@ backend:
   services:
     customerUrl: http://localhost:5000/api--customer/
     productUrl: http://localhost:5100/api--product
+
+
+token:
+  clientId: site--shoesclick
+  clientSecret: WrgQYaKuYaDDVjLT3wHis5P9kOnAfjJf
+  grantType : client_credentials
