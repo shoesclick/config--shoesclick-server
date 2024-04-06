@@ -14,7 +14,7 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:root}
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://${MYSQL_HOST:mysql.ns-infra.svc.cluster.local}:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
 kafka:
   bootstrap-servers: localhost:9092
@@ -28,7 +28,7 @@ kafka:
 
 cache:
   redis:
-    host: localhost
+    host: redis.ns-infra.svc.cluster.local
     port: 6379
     ttlCache: 55
 
