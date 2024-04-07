@@ -28,7 +28,7 @@ kafka:
 
 cache:
   redis:
-    host: redis.ns-infra.svc.cluster.local
+    host: ${CACHE_URL:localhost}
     port: 6379
     ttlCache: 55
 
@@ -44,7 +44,7 @@ backend:
     cardUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
 
 token:
-  tokenUrl: ${LOGIN_HOST:http://svc-login.ns-login.svc.cluster.local:7080}/auth/realms/shoesclick-site/
+  tokenUrl: ${LOGIN_HOST:http://localhost:7080}/auth/realms/shoesclick-site/
   clientId: site--shoesclick
   clientSecret: bmSdwJQNnaE9snfWtBkm5r8jvmKqrTOr
   grantType : client_credentials
