@@ -3,8 +3,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site
-          jwk-set-uri: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
+          issuer-uri: ${LOGIN_HOST:http://svc-login.ns-login.svc.cluster.local:7080}/auth/realms/shoesclick-site
+          jwk-set-uri: ${LOGIN_HOST:http://svc-login.ns-login.svc.cluster.local:7080}/auth/realms/shoesclick-site/protocol/openid-connect/certs
 
 backend:
   services:
