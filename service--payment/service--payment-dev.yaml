@@ -44,7 +44,7 @@ backend:
     cardUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
 
 token:
-  tokenUrl: http://localhost:7080/auth/realms/shoesclick-site/
+  tokenUrl: http://shoesclick-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/
   clientId: site--shoesclick
   clientSecret: WrgQYaKuYaDDVjLT3wHis5P9kOnAfjJf
   grantType : client_credentials
