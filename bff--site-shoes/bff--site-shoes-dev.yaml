@@ -8,9 +8,9 @@ spring:
 
 backend:
   services:
-    customerUrl: http://localhost:5000/api--customer/
-    productUrl: http://localhost:5100/api--product/
-    orderUrl: http://localhost:5300/api--order/
+    customerUrl: ${API_CUSTOMER_URL:http://localhost:5000}/api--customer/
+    productUrl: ${API_PRODUCT_URL:http://localhost:5000}/api--product/
+    orderUrl: ${API_ORDER_URL:http://localhost:5000}/api--order/
 
 cache:
   redis:

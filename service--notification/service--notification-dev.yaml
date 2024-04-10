@@ -42,8 +42,8 @@ cache:
 
 backend:
   services:
-    customerUrl: http://localhost:5000/api--customer/
-    productUrl: http://localhost:5100/api--product
+    customerUrl: ${API_CUSTOMER_URL:http://localhost:5000}/api--customer/
+    productUrl: ${API_PRODUCT_URL:http://localhost:5000}/api--product/
 
 token:
   tokenUrl: ${LOGIN_URL:http://localhost:7080}/auth/realms/shoesclick-site/
