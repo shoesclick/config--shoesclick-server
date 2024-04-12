@@ -14,18 +14,18 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:root}
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dborder?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://mysql.shoesclick.local:3306/dborder?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${LOGIN_URL:http://localhost:7080}/auth/realms/shoesclick-site
-          jwk-set-uri: ${LOGIN_URL:http://localhost:7080}/auth/realms/shoesclick-site/protocol/openid-connect/certs
+          issuer-uri: http://login.shoesclick.local:7080/auth/realms/shoesclick-site
+          jwk-set-uri: http://login.shoesclick.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
 
 kafka:
-  bootstrap-servers: ${KAFKA_HOST:localhost}:9092
-  schemaRegistry: http://${SCHEMA_REGISTRY_HOST:localhost}:8081
+  bootstrap-servers: kafka.shoesclick.local:9092
+  schemaRegistry: http://schema-registry.shoesclick.local:8081
   notification:
     topic: kfk-order-notification
     groupId: grp-order-notification
@@ -35,5 +35,5 @@ kafka:
 
 backend:
   services:
-    customerUrl: ${API_CUSTOMER_URL:http://localhost:5000}/api--customer/
-    productUrl: ${API_PRODUCT_URL:http://localhost:5000}/api--product
+    customerUrl: http://api-customer.shoesclick.local:5000/api--customer/
+    productUrl: http://api-product.shoesclick.local:5000/api--product/
