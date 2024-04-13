@@ -17,3 +17,11 @@ cache:
     host: redis.ns-infra.svc.cluster.local
     port: 6379
     ttlCache: 3
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server--discovery-stack.shoes-eks.svc.cluster.local:8762/eureka/
+  instance:
+    prefer-ip-address: 'true'

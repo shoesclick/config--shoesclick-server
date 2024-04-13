@@ -50,3 +50,11 @@ token:
   clientId: site--shoesclick
   clientSecret: LdpZ9Zyp3p0dN0fbaHtwowDR7bLF7TjS
   grantType : client_credentials
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server--discovery-stack.shoes-eks.svc.cluster.local:8762/eureka/
+  instance:
+    prefer-ip-address: 'true'
