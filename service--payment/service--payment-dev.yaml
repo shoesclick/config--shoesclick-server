@@ -46,5 +46,5 @@ backend:
 token:
   tokenUrl: http://login.shoesclick.local:7080/auth/realms/shoesclick-site/
   clientId: site--shoesclick
-  clientSecret: 7weXO4NGzF30qsWKouKHs5TXiHoeNJiQ
+  clientSecret: LdpZ9Zyp3p0dN0fbaHtwowDR7bLF7TjS
   grantType : client_credentials
