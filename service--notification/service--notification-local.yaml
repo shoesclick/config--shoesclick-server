@@ -1,0 +1,52 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        jdbc:
+          time_zone: ${SPRING_JPA_TIMEZONE:America/Sao_Paulo}
+    hibernate:
+      ddl-auto: update
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+  datasource:
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    tomcat:
+      max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
+    url: jdbc:mysql://localhost:3306/dbnotification?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    username: ${EMAIL_USERNAME:clayton.oliveira@al.infnet.edu.br}
+    host: ${SMTP_HOST:smtp.gmail.com}
+    password: { EMAIL_PASSWORD:cccc }
+    port: '587'
+
+kafka:
+  bootstrap-servers: localhost:9092
+  schemaRegistry: http://localhost.local:8081
+  notification:
+    topic: kfk-order-notification
+    groupId: grp-order-notification
+
+cache:
+  redis:
+    host: localhost
+    port: 6379
+    ttlCache: 55
+
+backend:
+  services:
+    customerUrl: http://localhost:5000/api--customer/
+    productUrl: http://localhost:5000/api--product/
+
+token:
+  tokenUrl: http://localhost:7080/auth/realms/shoesclick-site/
+  clientId: site--shoesclick
+  clientSecret: LdpZ9Zyp3p0dN0fbaHtwowDR7bLF7TjS
+  grantType : client_credentials
