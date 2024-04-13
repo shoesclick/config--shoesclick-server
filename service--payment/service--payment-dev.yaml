@@ -34,9 +34,9 @@ cache:
 
 backend:
   services:
-    customerUrl: http://api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
-    productUrl: http://api--product.shoes-eks.svc.cluster.local:5000/api--product/
-    orderUrl: http://api--order.shoes-eks.svc.cluster.local:5000/api--order/
+    customerUrl: http://svc-api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
+    productUrl: http://svc-api--product.shoes-eks.svc.cluster.local:5000/api--product/
+    orderUrl: http://svc-api--order.shoes-eks.svc.cluster.local:5000/api--order/
 
   gateway:
     bankSlipUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
@@ -53,6 +53,6 @@ token:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://server--discovery-stack.shoes-eks.svc.cluster.local:8762/eureka/
+      defaultZone: http://svc-server--discovery-stack.shoes-eks.svc.cluster.local:8762/eureka/
   instance:
     prefer-ip-address: 'true'
