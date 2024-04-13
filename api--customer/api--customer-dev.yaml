@@ -14,11 +14,11 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:root}
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-    url: jdbc:mysql://mysql.shoesclick.local:3306/dbcustomer?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://mysql.ns-infra.svc.cluster.local:3306/dbcustomer?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://login.shoesclick.local:7080/auth/realms/shoesclick-site
-          jwk-set-uri: http://login.shoesclick.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
+          issuer-uri: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site
+          jwk-set-uri: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs

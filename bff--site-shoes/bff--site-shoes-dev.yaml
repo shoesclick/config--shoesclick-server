@@ -3,17 +3,17 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://login.shoesclick.local:7080/auth/realms/shoesclick-site
-          jwk-set-uri: http://login.shoesclick.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
+          issuer-uri: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site
+          jwk-set-uri: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/certs
 
 backend:
   services:
-    customerUrl: http://api-customer.shoesclick.local:5000/api--customer/
-    productUrl: http://api-product.shoesclick.local:5000/api--product/
-    orderUrl: http://api-order.shoesclick.local:5000/api--order/
+    customerUrl: http://api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
+    productUrl: http://api--product.shoes-eks.svc.cluster.local:5000/api--product/
+    orderUrl: http://api--order.shoes-eks.svc.cluster.local:5000/api--order/
 
 cache:
   redis:
-    host: redis.shoesclick.local
+    host: redis.ns-infra.svc.cluster.local
     port: 6379
     ttlCache: 3

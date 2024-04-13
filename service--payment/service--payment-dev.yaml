@@ -14,11 +14,11 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:root}
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-    url: jdbc:mysql://mysql.shoesclick.local:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://mysql.ns-infra.svc.cluster.local:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
 kafka:
-  bootstrap-servers: kafka.shoesclick.local:9092
-  schemaRegistry: http://schema-registry.shoesclick.local:8081
+  bootstrap-servers: kafka.ns-infra.svc.cluster.local:9092
+  schemaRegistry: http://schema-registry.ns-infra.svc.cluster.local:8081
   notification:
     topic: kfk-order-notification
     groupId: grp-order-notification
@@ -28,15 +28,15 @@ kafka:
 
 cache:
   redis:
-    host: redis.shoesclick.local
+    host: redis.ns-infra.svc.cluster.local
     port: 6379
     ttlCache: 3
 
 backend:
   services:
-    customerUrl: http://api-customer.shoesclick.local:5000/api--customer/
-    productUrl: http://api-product.shoesclick.local:5000/api--product/
-    orderUrl: http://api-order.shoesclick.local:5000/api--order/
+    customerUrl: http://api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
+    productUrl: http://api--product.shoes-eks.svc.cluster.local:5000/api--product/
+    orderUrl: http://api--order.shoes-eks.svc.cluster.local:5000/api--order/
 
   gateway:
     bankSlipUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
@@ -44,7 +44,7 @@ backend:
     cardUrl: https://a0bb02cd-0bbc-46d6-915b-36835334ba89.mock.pstmn.io
 
 token:
-  tokenUrl: http://login.shoesclick.local:7080/auth/realms/shoesclick-site/
+  tokenUrl: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/
   clientId: site--shoesclick
   clientSecret: LdpZ9Zyp3p0dN0fbaHtwowDR7bLF7TjS
   grantType : client_credentials
