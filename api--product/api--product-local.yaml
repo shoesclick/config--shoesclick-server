@@ -1,4 +1,7 @@
 spring:
+  sql:
+    init:
+      mode: always
   jpa:
     properties:
       hibernate:
@@ -8,6 +11,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: ${SPRING_JPA_SHOW_SQL:true}
+    defer-datasource-initialization: true
   datasource:
     password: ${SPRING_DATASOURCE_PASSWORD:password}
     driver-class-name: com.mysql.cj.jdbc.Driver
