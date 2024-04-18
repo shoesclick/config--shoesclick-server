@@ -51,8 +51,8 @@ cache:
 
 backend:
   services:
-    customerUrl: http://svc-api-customer.ns-infra.svc.cluster.local:5000/api--customer/
-    productUrl: http://svc-api-product.ns-infra.svc.cluster.local:5000/api--product/
+    customerUrl: http://svc-api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
+    productUrl: http://svc-api--product.shoes-eks.svc.cluster.local:5000/api--product/
 
 token:
   tokenUrl: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/
