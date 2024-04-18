@@ -17,8 +17,8 @@ spring:
     url: jdbc:mysql://mysql.ns-infra.svc.cluster.local:3306/dbpayment?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
 
 kafka:
-  bootstrap-servers: kafka.ns-infra.svc.cluster.local:9092
-  schemaRegistry: http://schema-registry.ns-infra.svc.cluster.local:8081
+  bootstrap-servers: kafka-broker.ns-infra.svc.cluster.local:9092
+  schemaRegistry: http://schma-regstry.ns-infra.svc.cluster.local:8081
   notification:
     topic: kfk-order-notification
     groupId: grp-order-notification
