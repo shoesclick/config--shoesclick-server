@@ -37,7 +37,7 @@ management:
       enabled: false
 
 kafka:
-  bootstrap-servers: kafka-broker.ns-infra.svc.cluster.local:9092
+  bootstrap-servers: kfk-brkr.ns-infra.svc.cluster.local:9092
   schemaRegistry: http://schma-regstry.ns-infra.svc.cluster.local:8081
   notification:
     topic: kfk-order-notification
