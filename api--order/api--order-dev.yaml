@@ -35,8 +35,8 @@ kafka:
 
 backend:
   services:
-    customerUrl: http://api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
-    productUrl: http://api--product.shoes-eks.svc.cluster.local:5000/api--product/
+    customerUrl: http://svc-api--customer.shoes-eks.svc.cluster.local:5000/api--customer/
+    productUrl: http://svc-api--product.shoes-eks.svc.cluster.local:5000/api--product/
 
 
 eureka:
