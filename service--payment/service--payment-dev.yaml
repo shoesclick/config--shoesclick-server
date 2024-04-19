@@ -46,7 +46,7 @@ backend:
 token:
   tokenUrl: http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/
   clientId: site--shoesclick
-  clientSecret: rREDVUnjWvogpYuUxhKKZ8iABC8Tsfpm
+  clientSecret: kfiy07MCcynlU49xrxkMnOhKoIKF7VwA
   grantType : client_credentials
 
 
