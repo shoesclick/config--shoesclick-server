@@ -33,7 +33,7 @@ eureka:
 
 tracing:
   jaeger:
-    endpoint: http://localhost:14268/v1/traces
+    endpoint: http://localhost:14268/api/traces
 
 management:
   tracing:
