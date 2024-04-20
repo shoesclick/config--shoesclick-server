@@ -35,9 +35,6 @@ management:
   health:
     mail:
       enabled: false
-  tracing:
-    sampling:
-      probability: 1.0
 
 kafka:
   bootstrap-servers: localhost:9092
@@ -71,9 +68,12 @@ eureka:
   instance:
     prefer-ip-address: 'true'
 
-tracing:
-  jaeger:
-    endpoint: http://localhost:14268/v1/traces
+otel:
+  traces:
+    exporter: jaeger
+  exporter:
+    jaeger:
+      endpoint: http://localhost:14268/api/traces
 
 logging:
   pattern:
