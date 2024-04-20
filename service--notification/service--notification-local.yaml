@@ -31,6 +31,14 @@ spring:
     password: { EMAIL_PASSWORD:cccc }
     port: '587'
 
+management:
+  health:
+    mail:
+      enabled: false
+  tracing:
+    sampling:
+      probability: 1.0
+
 kafka:
   bootstrap-servers: localhost:9092
   schemaRegistry: http://localhost.local:8081
@@ -62,3 +70,11 @@ eureka:
       defaultZone: http://localhost:8762/eureka/
   instance:
     prefer-ip-address: 'true'
+
+tracing:
+  jaeger:
+    endpoint: http://localhost:14268/v1/traces
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

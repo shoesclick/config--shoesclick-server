@@ -29,3 +29,16 @@ eureka:
       defaultZone: http://svc-server--discovery-stack.shoes-eks.svc.cluster.local:8762/eureka/
   instance:
     prefer-ip-address: 'true'
+
+tracing:
+  jaeger:
+    endpoint: http://jaeger-collector.monitoracao.svc.cluster.local:14268/v1/traces
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

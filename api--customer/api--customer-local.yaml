@@ -30,3 +30,16 @@ eureka:
       defaultZone: http://localhost:8762/eureka/
   instance:
     prefer-ip-address: 'true'
+
+tracing:
+  jaeger:
+    endpoint: http://localhost:14268/v1/traces
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
