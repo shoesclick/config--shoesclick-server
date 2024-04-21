@@ -63,7 +63,3 @@ otel:
   exporter:
     jaeger:
       endpoint: http://jaeger-collector.monitoracao.svc.cluster.local:14268/api/traces
-
-logging:
-  pattern:
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
