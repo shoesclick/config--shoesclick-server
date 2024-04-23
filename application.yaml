@@ -2,3 +2,29 @@ info:
   app:
     name: "@project.artifactId@"
     version: "@project.version@"
+
+logbook:
+  exclude:
+    - "/swagger-ui/**"
+    - "/actuator/**"
+    - "/v2/api-docs"
+    - "/swagger-resources/**"
+    - "/favicon.ico"
+  format.style: http
+  strategy: body-only-if-status-at-least
+  minimum-status: 400
+  obfuscate:
+    headers:
+      - Authorization
+      - X-Secret
+    parameters:
+      - access_token
+      - password
+  write:
+    chunk-size: 1000
+  attribute-extractors:
+    - type: JwtFirstMatchingClaimExtractor
+      claim-names: [ "sub", "subject" ]
+      claim-key: Principal
+    - type: JwtAllMatchingClaimsExtractor
+      claim-names: [ "sub", "iat" ]

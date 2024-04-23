@@ -31,11 +31,6 @@ spring:
     password: { EMAIL_PASSWORD:cccc }
     port: '587'
 
-management:
-  health:
-    mail:
-      enabled: false
-
 kafka:
   bootstrap-servers: kfk-brkr.ns-infra.svc.cluster.local:9092
   schemaRegistry: http://schma-regstry.ns-infra.svc.cluster.local:8081
@@ -68,9 +63,13 @@ eureka:
   instance:
     prefer-ip-address: 'true'
 
-otel:
-  traces:
-    exporter: jaeger
-  exporter:
-    jaeger:
-      endpoint: http://jaeger-collector.monitoracao.svc.cluster.local:14268/api/traces
+management:
+  tracing:
+    baggage:
+      enabled: 'true'
+    propagation:
+      type: 'w3c '
+    enabled: 'true'
+  zipkin:
+    tracing:
+      endpoint: 'http://zipkin.monitoracao.svc.cluster.local:9411/api/v2/spans'

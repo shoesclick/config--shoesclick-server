@@ -40,4 +40,4 @@ management:
     enabled: 'true'
   zipkin:
     tracing:
-      endpoint: 'http://localhost:9411/api/v2/spans'
+      endpoint: 'http://zipkin.monitoracao.svc.cluster.local:9411/api/v2/spans'
